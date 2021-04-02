@@ -1,15 +1,28 @@
 
-
+clc;clear;
 %define vars
+global board 
+board = zeros(3);
 
-for i=1:100
+for i=1:10
 %display board given matrix A
 
-
 %ask for input output matrix A
-
+r = input('row');
+c = input('col');
+board(r,c) = 1
 
 %check if game over
+
+
+%decide next move
+compMove(i);
+board
+
+
+
+
+
 
 
 %decide next move using function(A, i) and if staements
