@@ -1,0 +1,24 @@
+function [r,c] = scan_for_win(board)
+    boardt = board';
+    r = -1; c = -1;
+    for i = 1:3
+        if length(find(board(i,:) == 1)) == 2
+            r = i;
+            c = find(~board(i,:));
+            break
+        elseif length(find(boardt(i,:) == 1)) == 2
+            c = i;
+            r = find(~boardt(i,:));
+            break
+        end
+    end
+    if length(find(diag(board) == 1)) == 2
+        f = find(~diag(board));
+        r = f;
+        c = r;
+    elseif length(find(diag(rot90(board)) == 1)) == 2
+        f = find(~diag(board));
+        c = f;
+        r = c;
+    end
+end
