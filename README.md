@@ -1,6 +1,6 @@
 # Tic-Tac-Toe_Project
 
-function = display_board(board) %display board given matrix A                                                     (2 people)
+function = display_board(board) %display board given matrix A                                                     (Devin)
 
 function board = player1_turn(board) %ask for input; check if legal & output matrix of new board                  (Lee?)
 
