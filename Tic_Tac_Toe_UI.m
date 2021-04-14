@@ -1,7 +1,7 @@
 function Tic_Tac_Toe_UI
-
-global Board;
-Board=zeros(3)
+isfirstmove=1;
+global board;
+board=zeros(3)
 dbclear in Tic_Tac_Toe_UI % reset breakpoints in this file
 figure('color', 'black','MenuBar','none','Name','Make a Move','Position',[200,300,285,300]); 
 %restart button
@@ -61,9 +61,9 @@ uicontrol('Style', 'pushbutton',...
 end
 
 function restart_game(src,event) %restarting game
-global Board;
+global board;
 clc;
-Board=zeros(3)
+board=zeros(3)
 end
 
 
@@ -71,55 +71,63 @@ end
 %single value on the board matrix
 
 function brd_playAOne(src,event)
-global Board;
-Board(1,1)=1
+global board;
+board(1,1)=1
 win_scan()
+compMove()
 end
 
 function brd_playBOne(src,event)
 global Board;
 Board(2,1)=1
 win_scan()
+compMove()
 end
 
 function brd_playCOne(src,event)
-global Board;
-Board(3,1)=1
+global board;
+board(3,1)=1
 win_scan()
+compMove()
 end
 
 function brd_playATwo(src,event)
-global Board;
-Board(1,2)=1
+global board;
+board(1,2)=1
 win_scan()
 end
 
 function brd_playBTwo(src,event)
-global Board;
-Board(2,2)=1
+global board;
+board(2,2)=1
 win_scan()
+compMove()
 end
 
 function brd_playCTwo(src,event)
-global Board;
-Board(3,2)=1
+global board;
+board(3,2)=1
 win_scan()
+compMove()
 end
 
 function brd_playAThree(src,event)
-global Board;
-Board(1,3)=1
+global board;
+board(1,3)=1
 win_scan()
+compMove()
 end
 
 function brd_playBThree(src,event)
-global Board;
-Board(2,3)=1
+global board;
+board(2,3)=1
 win_scan()
+compMove()
 end
 
 function brd_playCThree(src,event)
-global Board;
-Board(3,3)=1
+global board;
+board(3,3)=1
 win_scan()
+compMove()
 end
