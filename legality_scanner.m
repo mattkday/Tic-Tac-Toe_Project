@@ -6,6 +6,7 @@
 
 
 function [k] = legality_scanner(r,c)
+%this k is the value whether or not its legal 
 k =0;
 global board
 
@@ -13,6 +14,7 @@ global board
 if board(r,c) == 0
     
     board(r,c) = 1
+    %this k is the value whether or not its legal 
     k =1;
     win_scan()
 

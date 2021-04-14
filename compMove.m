@@ -3,6 +3,8 @@ function [] = compMove(iter)
     global winr;
     [r,c] = scan_for_win(2);
     [rx,cx] = scan_for_win(1);
+    %This if statement will stop the computer from moving if the winr is
+    %true 
     if winr 
         disp('YOU WIN NICE JOB')
     elseif iter == 1    %first move

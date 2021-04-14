@@ -8,6 +8,7 @@
 
 function[]=win_scan()
 global board;
+%this is the global win statement 
 global winr;
 
 for i=1:3 %checking horizontal and vertical forks at the same time

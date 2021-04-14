@@ -1,7 +1,9 @@
 function Tic_Tac_Toe_UI
+%this makes the firstmove variable global and true 
 global isfirstmove;
 isfirstmove = 1;
-global winr;
+%this makes the winr global and states that it starts false 
+global winr; 
 winr =0; 
 global board;
 board=zeros(3)
@@ -78,6 +80,8 @@ end
 function brd_playAOne(src,event)
 global board;
 global isfirstmove;
+%this if statment scans if the move is legal/ if a win condition is met
+%then it will run the computer move if the player has not played there
     if legality_scanner(1,1) | winr~= 1
         compMove(isfirstmove)
         isfirstmove=0;
@@ -89,6 +93,8 @@ end
 function brd_playBOne(src,event)
 global board;
 global isfirstmove;
+%this if statment scans if the move is legal/ if a win condition is met
+%then it will run the computer move if the player has not played there
 if legality_scanner(2,1) | winr~= 1
         win_scan()
         compMove(isfirstmove)
@@ -100,6 +106,8 @@ end
 function brd_playCOne(src,event)
 global board;
 global isfirstmove;
+%this if statment scans if the move is legal/ if a win condition is met
+%then it will run the computer move if the player has not played there
 if legality_scanner(3,1) | winr~= 1
         win_scan()
         compMove(isfirstmove)
@@ -111,6 +119,8 @@ end
 function brd_playATwo(src,event)
 global board;
 global isfirstmove;
+%this if statment scans if the move is legal/ if a win condition is met
+%then it will run the computer move if the player has not played there
 if legality_scanner(1,2) | winr~= 1
         win_scan()
         compMove(isfirstmove)
@@ -122,6 +132,8 @@ end
 function brd_playBTwo(src,event)
 global board;
 global isfirstmove;
+%this if statment scans if the move is legal/ if a win condition is met
+%then it will run the computer move if the player has not played there
 if legality_scanner(2,2) | winr~= 1
         win_scan()
         compMove(isfirstmove)
@@ -133,6 +145,8 @@ end
 function brd_playCTwo(src,event)
 global board;
 global isfirstmove;
+%this if statment scans if the move is legal/ if a win condition is met
+%then it will run the computer move if the player has not played there
 if legality_scanner(3,2) | winr~= 1
         win_scan()
         compMove(isfirstmove)
@@ -144,6 +158,8 @@ end
 function brd_playAThree(src,event)
 global board;
 global isfirstmove;
+%this if statment scans if the move is legal/ if a win condition is met
+%then it will run the computer move if the player has not played there
 if legality_scanner(1,3) | winr~= 1
         win_scan()
         compMove(isfirstmove)
@@ -155,6 +171,8 @@ end
 function brd_playBThree(src,event)
 global board;
 global isfirstmove;
+%this if statment scans if the move is legal/ if a win condition is met
+%then it will run the computer move if the player has not played there
 if legality_scanner(2,3) | winr~= 1
         win_scan()
         compMove(isfirstmove)
@@ -166,6 +184,8 @@ end
 function brd_playCThree(src,event)
 global board;
 global isfirstmove;
+%this if statment scans if the move is legal/ if a win condition is met
+%then it will run the computer move if the player has not played there
 if legality_scanner(3,3) | winr~= 1
         win_scan()
         compMove(isfirstmove)

@@ -3,8 +3,9 @@ function [] = compMove(iter)
     global winr;
     [r,c] = scan_for_win(2);
     [rx,cx] = scan_for_win(1);
+    %This if st
     if winr 
-        break;
+        disp('YOU WIN NICE JOB')
     elseif iter == 1    %first move
         if board(2,2) == 1; board(1,1) = 2;
         else
