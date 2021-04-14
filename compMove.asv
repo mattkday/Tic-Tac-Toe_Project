@@ -4,7 +4,7 @@ function [] = compMove(iter)
     [r,c] = scan_for_win(2);
     [rx,cx] = scan_for_win(1);
     if winr 
-        disp('YOU WIN NICE JOB')
+        break;
     elseif iter == 1    %first move
         if board(2,2) == 1; board(1,1) = 2;
         else

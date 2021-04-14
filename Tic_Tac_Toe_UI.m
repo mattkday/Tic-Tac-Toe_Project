@@ -1,7 +1,8 @@
 function Tic_Tac_Toe_UI
 global isfirstmove;
 isfirstmove = 1;
-
+global winr;
+winr =0; 
 global board;
 board=zeros(3)
 dbclear in Tic_Tac_Toe_UI % reset breakpoints in this file
@@ -77,88 +78,98 @@ end
 function brd_playAOne(src,event)
 global board;
 global isfirstmove;
-board(1,1)=1
-compMove(isfirstmove)
-isfirstmove=0;
-board
+    if legality_scanner(1,1) | winr~= 1
+        compMove(isfirstmove)
+        isfirstmove=0;
+        board 
+    end
+    
 end
 
 function brd_playBOne(src,event)
 global board;
 global isfirstmove;
-board(2,1)=1
-win_scan()
-compMove(isfirstmove)
-isfirstmove=0;
-board
+if legality_scanner(2,1) | winr~= 1
+        win_scan()
+        compMove(isfirstmove)
+        isfirstmove=0;
+        board
+    end
 end
 
 function brd_playCOne(src,event)
 global board;
 global isfirstmove;
-board(3,1)=1
-win_scan()
-compMove(isfirstmove)
-isfirstmove=0;
-board
+if legality_scanner(3,1) | winr~= 1
+        win_scan()
+        compMove(isfirstmove)
+        isfirstmove=0;
+        board
+    end
 end
 
 function brd_playATwo(src,event)
 global board;
 global isfirstmove;
-board(1,2)=1
-win_scan()
-compMove(isfirstmove)
-isfirstmove=0;
-board
+if legality_scanner(1,2) | winr~= 1
+        win_scan()
+        compMove(isfirstmove)
+        isfirstmove=0;
+        board
+    end
 end
 
 function brd_playBTwo(src,event)
 global board;
 global isfirstmove;
-board(2,2)=1
-win_scan()
-compMove(isfirstmove)
-isfirstmove=0;
-board
+if legality_scanner(2,2) | winr~= 1
+        win_scan()
+        compMove(isfirstmove)
+        isfirstmove=0;
+        board
+    end
 end
 
 function brd_playCTwo(src,event)
 global board;
 global isfirstmove;
-board(3,2)=1
-win_scan()
-compMove(isfirstmove)
-isfirstmove=0;
-board
+if legality_scanner(3,2) | winr~= 1
+        win_scan()
+        compMove(isfirstmove)
+        isfirstmove=0;
+        board
+    end
 end
 
 function brd_playAThree(src,event)
 global board;
 global isfirstmove;
-board(1,3)=1
-win_scan()
-compMove(isfirstmove)
-isfirstmove=0;
-board
+if legality_scanner(1,3) | winr~= 1
+        win_scan()
+        compMove(isfirstmove)
+        isfirstmove=0;
+        board
+    end
 end
 
 function brd_playBThree(src,event)
 global board;
 global isfirstmove;
-board(2,3)=1
-win_scan()
-compMove(isfirstmove)
-isfirstmove=0;
-board
+if legality_scanner(2,3) | winr~= 1
+        win_scan()
+        compMove(isfirstmove)
+        isfirstmove=0;
+        board
+    end
 end
 
 function brd_playCThree(src,event)
 global board;
 global isfirstmove;
-board(3,3)=1
-win_scan()
-compMove(isfirstmove)
-isfirstmove=0;
-board
+if legality_scanner(3,3) | winr~= 1
+        win_scan()
+        compMove(isfirstmove)
+        isfirstmove=0;
+        board
+    end
 end

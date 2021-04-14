@@ -6,9 +6,9 @@
 
 %call this function after each move is made to check for winning placements
 
-function[r]=win_scan()
+function[]=win_scan()
 global board;
-r = 0;
+global winr;
 
 for i=1:3 %checking horizontal and vertical forks at the same time
     %checking rows for win
@@ -18,10 +18,10 @@ for i=1:3 %checking horizontal and vertical forks at the same time
         %determining winner based on stored value
         if win_value==[2,2,2]
             fprintf('the computer wins by line on row %f \n',i)
-            r = 1;
+            winr = 1;
         elseif win_value==[1,1,1]
             fprintf('you win by line on row %f \n',i)
-            r = 1;
+            winr = 1;
         end
     end
 
@@ -33,10 +33,10 @@ for i=1:3 %checking horizontal and vertical forks at the same time
         %determining winner
             if win_value==[2,2,2]
               fprintf('the computer wins by line on column %f \n',i)
-              r =1;
+              winr =1;
             elseif win_value==[1,1,1]
               fprintf('you win by line on column %f \n',i)
-              r =1;
+              winr =1;
             end
        end
 end     
@@ -44,10 +44,10 @@ end
   %-----------------------------------------------------------------
        if diag(board)==1%forward diagonal
            disp('player wins by line on forward diagonal')
-           r =1;
+           winr =1;
        elseif diag(board)==[2;2;2]
            disp('computer wins by line on forward diagonal')
-           r =1;
+           winr =1;
        end
 %backwards diagonal is a bit longer
 diag_vec=[0,0,0];%placeholder for monitored vector
@@ -57,10 +57,10 @@ diag_vec=[0,0,0];%placeholder for monitored vector
  %determine winner by stored diagonal
  if diag_vec==[1,1,1]
      disp('the player wins by line on backwards diagonal')
-     r =1;
+     winr =1;
  elseif diag_vec==[2,2,2]
      disp('the computer wins by line on backwards diagonal')
-     r =1;
+     winr =1;
  end
 
 end
