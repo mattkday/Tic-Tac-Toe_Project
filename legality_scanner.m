@@ -4,16 +4,18 @@
 
 
 
-function [] = legality_scanner(v)
 
+function [k] = legality_scanner(r,c)
+k =0;
 global board
 
 %Checking to see if move is legal
-if board(v) ~= 0
+if board(r,c) == 0
     
-    board(v) = 1
-    
-    
+    board(r,c) = 1
+    k =1;
+    win_scan()
+
 %Retry
 else 
     disp('Position already chosen, please try again. \n')
