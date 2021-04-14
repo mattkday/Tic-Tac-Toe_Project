@@ -4,6 +4,9 @@ clc;clear;
 global board 
 board = zeros(3);
 
+
+%ones = player = 'X'
+%2 = computer = 'O'
 for i=1:10
 %display board given matrix A
 board

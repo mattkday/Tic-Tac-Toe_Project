@@ -4,6 +4,7 @@
 
 
 
+
 function [k] = legality_scanner(r,c)
 k =0;
 global board
@@ -14,6 +15,7 @@ if board(r,c) == 0
     board(r,c) = 1
     k =1;
     win_scan()
+
 %Retry
 else 
     disp('Position already chosen, please try again. \n')
