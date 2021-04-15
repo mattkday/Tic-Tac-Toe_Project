@@ -1,17 +1,19 @@
 function [] = compMove(iter)
+global isfirstmove
     global board;
     global winr;
     [r,c] = scan_for_win(2);
     [rx,cx] = scan_for_win(1);
     %This if statement will stop the computer from moving if the winr is
     %true 
-    if winr 
-        disp('YOU WIN NICE JOB')
-    elseif iter == 1    %first move
+   if winr ==1
+   disp('GAME OVER')
+   elseif isfirstmove == 1    %first move
         if board(2,2) == 1; board(1,1) = 2;
         else
             board(2,2) = 2; % next move should be ?
         end
+        isfirstmove=0;
     elseif r ~= -1   %Win
         board(r,c) = 2;
         %O wins
@@ -19,10 +21,10 @@ function [] = compMove(iter)
         board(rx,cx) = 2;
     elseif scanForks(2) ~= -1   %fork
         board(scanForks(2)) = 2;
-        disp('fork');
+        %disp('fork');
     elseif scanForks(1) ~= -1     %block fork
         board(scanForks(1)) = 2;
-        disp('block fork');
+       % disp('block fork');
     elseif board(2,2) == 0      %center
         board(2,2) = 2;
     elseif false      %opposite corner
@@ -58,6 +60,10 @@ end
 
 %     Empty side: The player plays in a middle square on any of the 4 sides.
 
+%matthew DeRouen changes:
+%i replaced iter with isfirstmove and made it global
+%this appears to have made no change at all so the overwriting bug is
+%somewhere in the scan forks or scan_for_win
 
 
 

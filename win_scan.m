@@ -1,12 +1,12 @@
 %Matthew DeRouen
-%4/8/2021
-%too late at night to find the time
+%last update on: 4/15/2021
+
 %making a program to determine whether or not a winning position has been
 %played
 
 %call this function after each move is made to check for winning placements
 
-function[]=win_scan()
+function win_scan()
 global board;
 %this is the global win statement 
 global winr;
@@ -19,7 +19,7 @@ for i=1:3 %checking horizontal and vertical forks at the same time
         %determining winner based on stored value
         if win_value==[2,2,2]
             fprintf('the computer wins by line on row %f \n',i)
-            winr = 1;
+            winr = 1; %used to lock player input after finished game
         elseif win_value==[1,1,1]
             fprintf('you win by line on row %f \n',i)
             winr = 1;
@@ -33,8 +33,8 @@ for i=1:3 %checking horizontal and vertical forks at the same time
         win_value= board(1:3,i);%choosing value on winning line to determine who won
         %determining winner
             if win_value==[2,2,2]
-              fprintf('the computer wins by line on column %f \n',i)
-              winr =1;
+              fprintf('the computer wins by line on column %f \n',i) %win announced
+              winr =1;%changes to boolean of 1 to use for player lockout in legality_scanner
             elseif win_value==[1,1,1]
               fprintf('you win by line on column %f \n',i)
               winr =1;
@@ -63,16 +63,20 @@ diag_vec=[0,0,0];%placeholder for monitored vector
      disp('the computer wins by line on backwards diagonal')
      winr =1;
  end
-
+ Tboard=board; %making a placeholder board to check for full game board rather than using iterations
+for r=1:3   
+    for c=1:3
+        if Tboard(r,c)~= 0  %scanning the entire board and replacing nonzero values with a one to compare to full board
+            Tboard(r,c)=1;
+        end 
+    end
+end
+if Tboard== ones(3,3)
+    disp('Tie! Try Again') %this can only be reached if a winner hasnt been determined yet and board is filled
+end
 end
 
-%% changes needed
-%--------------------------------------------------------
-%needs plugin to the interface to display the messages 
- %needs to be checked in the case that variables dont conflict with other parts
- 
- %% DONE
- %--------------------------------------------------------
- %board variable name might need to be changed to "global" i saw that it
- %was an operator so i didnt try to bother with it.
+ %added:
+ %I made it able to detect a tie and display a message stating this 
+
 

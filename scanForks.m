@@ -38,5 +38,5 @@ function [r,c] = scanForks(plyr)
             [r,c] = find(pb == m,1);
         end
     end
-    pb
+    
 end
