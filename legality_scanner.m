@@ -2,12 +2,9 @@
 %4/14/21
 %Legality Scanner
 
-
-
-
 function [k] = legality_scanner(r,c)
 global winr;
-%this k is the value whether or not its legal 
+%this k is the value whether or not its legal
 k =0;
 global board;
 global lr;
@@ -18,11 +15,10 @@ if board(r,c) == 0 && winr==0
     board(r,c) = 1;
     lr = r;
     lc = c;
-    %this k is the value whether or not its legal 
+    %this k is the value whether or not its legal
     k =1;
-
-
-%if the game is over, the user input is locked out
+   
+    %if the game is over, the user input is locked out
 elseif winr==1
     disp('The game has ended, no further moves can be made')
     
@@ -30,9 +26,8 @@ elseif winr==1
 else
     disp('Position already chosen, please try again.')
     
-    
 end
-  
+
 end
 
 %matthew DeRouen
