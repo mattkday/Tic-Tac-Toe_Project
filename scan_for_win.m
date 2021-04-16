@@ -1,6 +1,7 @@
+%Matthew Day
+%this function checks for a winning move for either the player or the
+%computer depending oon what is passed as player
 function [r,c] = scan_for_win(player)
-    %this function checks for a winning move for either the player or the
-    %computer depending oon what is passed as player
     global board;
     boardt = board';
     r = -1; c = -1;

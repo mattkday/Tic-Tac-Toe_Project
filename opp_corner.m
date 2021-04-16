@@ -1,10 +1,11 @@
+%Matthew Day
+%This function makes a move opposite of the player's corner
 function [r] = opp_corner()
     global lr;%players last row and column
     global lc;
     global board
     r = 0; %return 1 if the pmove is made
     
-    %this function makes a move opposite of the player's corner
     if lr == 1 && lc == 1%top right corner
         if board(3,3) == 0
             board(3,3) = 2;

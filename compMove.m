@@ -1,15 +1,16 @@
+%Matthew Day
+%this function makes the movement decisions for the computer
 function [] = compMove(iter)
 global isfirstmove
 global board;
 global winr;
 [r,c] = scan_for_win(2);
 [rx,cx] = scan_for_win(1);
+
 %This if statement will stop the computer from moving if the winr is
 %true
-
-
 if winr ==1
-    disp('GAME OVER')%if the player won, don't continue
+    disp('GAME OVER')
 elseif isfirstmove == 1    %first move
 %   Player O must always respond to a corner opening with a center mark, and to a center opening with a corner mark.
 %   An edge opening must be answered either with a center mark, a corner mark next to the X, or an edge mark opposite the X
@@ -38,7 +39,7 @@ elseif board(2,2) == 0      %center
 %   Center: A player marks the center. (If it is the first move of the game, playing a corner move gives the second player more opportunities to make a mistake and may therefore be the better choice; however, it makes no difference between perfect players.)
     board(2,2) = 2;
 elseif opp_corner      %opposite corner
-%   Opposite corner: If the opponent is in the corner, the player plays the opposite corner.
+%   Opposite corner ^: If the opponent is in the corner, the player plays the opposite corner.
     
     
 %   Empty corner: The player plays in a corner square.

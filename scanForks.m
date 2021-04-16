@@ -1,10 +1,11 @@
+%Matthew Day
+%this function scores each position based on its potential as a fork
+%it has a bug though
 function [r,c] = scanForks(plyr)
     global board;
     pb = zeros(3);
     r = -1; c = -1;
     
-    %this function scores each position based on its potential as a fork
-    %it has a bug though
     for i = 1:3
         if length(find(board(i,:) == plyr)) == 1 && length(find(~board(i,:))) >= 2
             %score the rows
