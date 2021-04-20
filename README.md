@@ -21,10 +21,10 @@ features:
 -able to scan for possible win conditions up to one round in advance with scan_for_win subfunction
 -is not mean i.e does not overwrite player moves like it used to
 
->>win_scan: used to determine whether or not somebody has won the game, and will announce if a win condition is true.
+win_scan: used to determine whether or not somebody has won the game, and will announce if a win condition is true.
 
-features:
--checks all possible win conditionseach time it is run
+>>features:
+-checks all possible win conditions each time it is run
 -sets up player lockout after win is found
 -announces win condition in command window
 
