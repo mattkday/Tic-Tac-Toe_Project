@@ -1,9 +1,31 @@
 # Tic-Tac-Toe_Project
+Functions:
 
-function = display_board(board) %display board given matrix A                                                     (Devin)
+>>Tic_Tac_Toe_UI:   This is the central function of the game, and where the actual game is played. All of the pushbuttons and global variables are declared here. 
 
-function board = player1_turn(board) %ask for input; check if legal & output matrix of new board                  (Lee?)
+features:  
+  - a pop up user interface for the player to update the game, complete with title and credits
+  - restart button to reset the game
+  - pushbutton controls that show the current state of the game
 
-function (bool) = isGameOver(board) %check if game over;who won? Draw?                                            (1 person)
+>>legality_scanner:  This function is used to first check the players move so that it doesnt overwrite another move, then update the game board accordingly.
 
-function board = comp_turn(board, iter) %decide next move using if statements for each situation                  (Matt D)
+features:
+   - accurate conditions to police player moves
+   - player is locked out after a win condition is met
+   - notifies the player if they make an illegal move
+
+>>compMove: a computer opponent that responds to player move by checking for potential wins in the next round of moves, and updating the board to either reach a win or a tie.
+
+features:
+-able to scan for possible win conditions up to one round in advance with scan_for_win subfunction
+-is not mean i.e does not overwrite player moves like it used to
+
+>>win_scan: used to determine whether or not somebody has won the game, and will announce if a win condition is true.
+
+features:
+-checks all possible win conditionseach time it is run
+-sets up player lockout after win is found
+-announces win condition in command window
+
+
