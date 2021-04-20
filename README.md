@@ -18,14 +18,14 @@ features:
 *compMove: a computer opponent that responds to player move by checking for potential wins in the next round of moves, and updating the board to either reach a win or a tie.
 
 features:
--able to scan for possible win conditions up to one round in advance with scan_for_win subfunction
--is not mean i.e does not overwrite player moves like it used to
+- able to scan for possible win conditions up to one round in advance with scan_for_win subfunction
+- is not mean i.e does not overwrite player moves like it used to
 
 *win_scan: used to determine whether or not somebody has won the game, and will announce if a win condition is true.
 
 features:
--checks all possible win conditions each time it is run
--sets up player lockout after win is found
--announces win condition in command window
+- checks all possible win conditions each time it is run
+- sets up player lockout after win is found
+- announces win condition in command window
 
 
