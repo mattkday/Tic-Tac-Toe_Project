@@ -99,12 +99,13 @@ pb9=uicontrol('Style', 'pushbutton','Backgroundcolor','[0.4940 0.1840 0.5560]',.
 
 set(pb9,'Foregroundcolor','[0.9290 0.6940 0.1250]')
 
+%This code creates the title textbox with color and background
 Title=uicontrol('Style','text','Position',[50 420 200 20],'String','TIC TAC TIGER','FontSize',12,'FontWeight','bold')
-set(Title,'Foregroundcolor','[0.9290 0.6940 0.1250]')
-set(Title,'Backgroundcolor','[0.4940 0.1840 0.5560]')
+set(Title,'Foregroundcolor','[0.9290 0.6940 0.1250]');set(Title,'Backgroundcolor','[0.4940 0.1840 0.5560]')
+%This code tells what gods created it with the color and background
 Names=uicontrol('Style','text','Position',[50 400 200 20],'String','Made by: Matt^3, Devin, Lee','FontSize',10,'FontWeight','bold')
-set(Names,'Foregroundcolor','[0.9290 0.6940 0.1250]')
-set(Names,'Backgroundcolor','[0.4940 0.1840 0.5560]')
+set(Names,'Foregroundcolor','[0.9290 0.6940 0.1250]');set(Names,'Backgroundcolor','[0.4940 0.1840 0.5560]')
+
 % this function restarts the game after there has been a win or tie
     function restart_game(src,event)%restarting game
         winr=0;
