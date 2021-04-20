@@ -1,6 +1,5 @@
 %Matthew Day
 %this function scores each position based on its potential as a fork
-%it has a bug though
 function [r,c] = scanForks(plyr)
     global board;
     pb = zeros(3);
@@ -45,7 +44,7 @@ function [r,c] = scanForks(plyr)
     end
     if ~isequal(pb,zeros(3))%if a score is larger than 1 find it and return its position
         m = max(pb,[],'all');
-        if m >=2
+        if m >=2 & board(find(pb == m,1)) == 0
             [r,c] = find(pb == m,1);
         end
     end
